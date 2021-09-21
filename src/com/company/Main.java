@@ -142,6 +142,9 @@ public class Main {
 
         Cake cake = new Cake();
         System.out.println(cake.getIngrediensTotalVægt());
+        System.out.println(cake.getBagtVægt());
+
+        System.out.println(cake);
 
 
 

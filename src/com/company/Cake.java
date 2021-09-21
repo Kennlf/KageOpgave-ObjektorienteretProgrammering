@@ -5,6 +5,7 @@ public class Cake {
     private final double OPRINDELIGT_ANTAL_PERSONER;
     private int ønskedeServeringer;
     private double omregningsfaktor;
+    private double bagtVægtRatio;
     private double bagtVægt;
     private double ingrediensTotalVægt;
 
@@ -39,7 +40,8 @@ public class Cake {
         this.OPRINDELIGT_ANTAL_PERSONER = 12;
         this.ønskedeServeringer = ønskedeServeringer;
         this.omregningsfaktor = ((ønskedeServeringer / OPRINDELIGT_ANTAL_PERSONER));
-        this.bagtVægt = 0.9;
+        this.bagtVægtRatio = 0.9;
+        this.bagtVægt = bagtVægt;
         this.ingrediensTotalVægt = ingrediensTotalVægt;
 
         // ingredienser for 12 personer
@@ -79,6 +81,17 @@ public class Cake {
         + (bladeHusblas * étBladHusblas) + (gramFlødeostNeutral * étGramFlødeostNeutral) + (gramFlormelis * étGramFlormelis) + (antalLime * énLimeVægt)
          + (deciliterPiskefløde * énDeciliterPiskfløde) + (gramHindbær * étGramHindbær) + (gramRibsgelé * étGramRibsgelé));
         return ingrediensTotalVægt;
+    }
+
+    public double getBagtVægt(){
+        bagtVægt = ingrediensTotalVægt * bagtVægtRatio;
+        return bagtVægt;
+    }
+
+    public String toString(){
+        return "Cheesecake til 12 personer " +
+                "\n Den samlede vægt for ingredienserne " + getIngrediensTotalVægt() + " gram." +
+                "\n Den samlede vægt for kagen samlet(bagt) " + getBagtVægt() + " gram.";
     }
 
 }
