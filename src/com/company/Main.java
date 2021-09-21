@@ -141,6 +141,8 @@ public class Main {
         System.out.println((df.format(totalKagevægt)) + "g"); */
 
         Cake cake = new Cake();
+        System.out.println(cake.getIngrediensTotalVægt());
+
 
 
     }
